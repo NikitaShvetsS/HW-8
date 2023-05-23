@@ -11,16 +11,12 @@ public class DynamicArray {
         if (index < 0 || index > size) {
             return false;
         }
-
         if (size == array.length) {
             extendArray();
         }
-
-        // Зсув елементів вправо
         for (int i = size - 1; i >= index; i--) {
             array[i + 1] = array[i];
         }
-
         array[index] = value;
         size++;
         return true;
@@ -34,12 +30,9 @@ public class DynamicArray {
         if (index < 0 || index >= size) {
             return false;
         }
-
-        // Зсув елементів вліво
         for (int i = index; i < size - 1; i++) {
             array[i] = array[i + 1];
         }
-
         array[size - 1] = null;
         size--;
         return true;
